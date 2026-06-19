@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+    Layout = "_Layout";
+    ViewBag.Title = ViewBag.Title ?? "Product Table";
+}
+@section Header {
+    Product Information
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h6 class="bg-primary text-white text-center m-2 p-2">Product Table</h6>
+    <div class="m-2">
+        <table class="table table-sm table-striped table-bordered">
+            <tbody>
+              @*   @switch (Model?.Name)
+                {
+                    case "Kayak":
+                        <tr><th>Name</th><td>Small boat</td></tr>
+                        break;
+                } *@
+                <tr>
+                    <td>Name</td>
+                    <td>@Model.Name</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>
+                        @Model?.Price.ToString("c")
+                        (@(((Model?.Price / ViewBag.AveragePrice)
+                                                * 100).ToString("F2"))% of average price)
+                    </td>
+                </tr>
+                <tr><th>Category ID</th><td>@Model?.CategoryId</td></tr>
+                @section Footer {
+                    @(((Model?.Price / ViewBag.AveragePrice)
+                                    * 100).ToString("F2"))% of average price
+                                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

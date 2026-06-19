@@ -1,0 +1,44 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+@section MyStyle {
+    <style>
+        .custom-title {
+            color: red;
+        }
+
+        .custom-content {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+}
+
+@section sec_header {
+    <div class="text-center my-3">
+        <h2 class="fw-bold text-primary custom-title">About</h2>
+    </div>
+}
+
+<div class="text-center custom-content">
+    <h1 class="display-4">Content</h1>
+</div>
+
+@section sec_footer {
+    <div class="text-center mt-4">
+        <p class="text-muted">Footer</p>
+    </div>
+}
+@section image {
+    <div class="text-center my-4">
+        <img src="~/images/cat.jpg"
+             alt="Logo"
+             class="img-fluid rounded shadow"
+             style="max-width:300px;" />
+    </div>
+}
