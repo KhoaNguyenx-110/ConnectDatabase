@@ -8,6 +8,7 @@ builder.Services.AddDbContext<DataContext>(opts => {
 });
 builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
+builder.Services.AddRazorPages();
 builder.Services.AddSession(options => {
     options.Cookie.IsEssential = true;
 });
@@ -15,6 +16,8 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseSession();
 app.MapControllers();
+app.MapRazorPages();
+app.UseRouting();
 app.MapControllerRoute("Default",
 "{controller=Supplier}/{action=Index}/{id?}");
 var context = app.Services.CreateScope().ServiceProvider

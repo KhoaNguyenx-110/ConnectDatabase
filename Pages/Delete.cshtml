@@ -1,0 +1,33 @@
+﻿@page "{id:long}"
+@model ConnectDatabase.Pages.DeleteModel
+@{
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h2>confirm delete</h2>
+<form method="post" class="form-control">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <td>
+                <input asp-for="supplier.SupplierId" type="hidden" />
+                <input asp-for="supplier.SupplierId" class="form-control" readonly />
+            </td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td><input asp-for="supplier.Name" class="form-control" readonly /></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td><input asp-for="supplier.City" class="form-control" readonly /></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" class=" btn btn-danger">delete</button>
+            </td>
+            <td>
+                <a asp-page="Index" class=" btn btn-danger">Cancel</a>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,28 @@
+﻿@page
+@model ConnectDatabase.Pages.CreateModel
+@{
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Create New Supplier</h2>
+<form method="post" class="form-control">
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <td>
+                <input asp-for="Supplier.Name" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td>
+                <input asp-for="Supplier.City" class="form-control" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type ="submit" class="btn btn-">Save</button>
+            </td>
+        </tr>
+    </table>
+</form>

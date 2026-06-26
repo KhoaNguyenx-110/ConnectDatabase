@@ -1,0 +1,30 @@
+﻿@page
+@model ConnectDatabase.Pages.IndexModel
+@{
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<h2>Supplier List</h2>
+<a asp-page="Create" class="btn btn-secondary">Create</a>
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Product</th>
+    </tr>
+    @foreach (var item in Model.SuppliersList)
+    {
+        <tr>
+            <td> @item.SupplierId</td>
+            <td>@item.Name</td>
+            <td>@item.City</td>
+            <td>@item.Products</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@item.SupplierId" class="btn btn-info">Edit</a>
+                <a asp-page="Delete" asp-route-id="@item.SupplierId" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+
+    }
+</table>
